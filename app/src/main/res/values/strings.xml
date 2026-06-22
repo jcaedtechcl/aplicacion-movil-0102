@@ -7,10 +7,15 @@
     <string name="regresar">Regresar</string>
 
     <string name="sport_futbol">Fútbol</string>
+    <string name="sport_futbol_desc">Deporte rey con dos equipos de 11 jugadores.</string>
     <string name="sport_baloncesto">Baloncesto</string>
+    <string name="sport_baloncesto_desc">Deporte de encestar el balón en un aro.</string>
     <string name="sport_voleibol">Voleibol</string>
+    <string name="sport_voleibol_desc">Deporte de pasar el balón sobre una red.</string>
     <string name="sport_beisbol">Béisbol</string>
+    <string name="sport_beisbol_desc">Deporte de batear y correr por bases.</string>
     <string name="sport_balonmano">Balonmano</string>
+    <string name="sport_balonmano_desc">Deporte de meter goles con las manos.</string>
 
     <string-array name="deportes_equipo">
         <item>@string/sport_futbol</item>
@@ -18,5 +23,13 @@
         <item>@string/sport_voleibol</item>
         <item>@string/sport_beisbol</item>
         <item>@string/sport_balonmano</item>
+    </string-array>
+
+    <string-array name="deportes_equipo_desc">
+        <item>@string/sport_futbol_desc</item>
+        <item>@string/sport_baloncesto_desc</item>
+        <item>@string/sport_voleibol_desc</item>
+        <item>@string/sport_beisbol_desc</item>
+        <item>@string/sport_balonmano_desc</item>
     </string-array>
 </resources>
