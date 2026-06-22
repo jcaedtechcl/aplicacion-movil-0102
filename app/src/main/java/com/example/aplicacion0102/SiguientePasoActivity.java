@@ -1,6 +1,7 @@
 package com.example.aplicacion0102;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -31,5 +32,8 @@ public class SiguientePasoActivity extends AppCompatActivity {
                 textViewResult.setText(value);
             }
         }
+
+        Button btnBack = findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(v -> finish());
     }
 }
