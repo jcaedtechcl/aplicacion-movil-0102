@@ -2,7 +2,9 @@ package com.example.aplicacion0102;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -39,6 +41,11 @@ public class SiguientePasoActivity extends AppCompatActivity {
 
         Button btnBack = findViewById(R.id.btnBack);
         btnBack.setOnClickListener(v -> finish());
+
+        ListView listViewSports = findViewById(R.id.listViewSports);
+        String[] sports = getResources().getStringArray(R.array.deportes_equipo);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, sports);
+        listViewSports.setAdapter(adapter);
     }
 
     @Override

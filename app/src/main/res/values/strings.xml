@@ -5,4 +5,18 @@
     <string name="siguiente_paso">Siguiente Actividad</string>
     <string name="hola">¡Hola!</string>
     <string name="regresar">Regresar</string>
+
+    <string name="sport_futbol">Fútbol</string>
+    <string name="sport_baloncesto">Baloncesto</string>
+    <string name="sport_voleibol">Voleibol</string>
+    <string name="sport_beisbol">Béisbol</string>
+    <string name="sport_balonmano">Balonmano</string>
+
+    <string-array name="deportes_equipo">
+        <item>@string/sport_futbol</item>
+        <item>@string/sport_baloncesto</item>
+        <item>@string/sport_voleibol</item>
+        <item>@string/sport_beisbol</item>
+        <item>@string/sport_balonmano</item>
+    </string-array>
 </resources>
