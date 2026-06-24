@@ -16,6 +16,7 @@
     <string name="sport_beisbol_desc">Deporte de batear y correr por bases.</string>
     <string name="sport_balonmano">Balonmano</string>
     <string name="sport_balonmano_desc">Deporte de meter goles con las manos.</string>
+    <string name="este_es_un_nuevo_fragmento_con_su_propio_ciclo_de_vida">Este es un nuevo fragmento con su propio ciclo de vida</string>
 
     <string-array name="deportes_equipo">
         <item>@string/sport_futbol</item>

@@ -80,7 +80,7 @@ public class SiguientePasoActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onRestart() {
+    public void onRestart() {
         super.onRestart();
         Log.d(TAG, "onRestart");
     }
