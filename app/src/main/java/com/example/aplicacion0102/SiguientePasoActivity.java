@@ -1,5 +1,6 @@
 package com.example.aplicacion0102;
 
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -49,11 +50,22 @@ public class SiguientePasoActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
 
         String[] noticias = getResources().getStringArray(R.array.deportes_equipo_noticias);
+        TypedArray imagenesTypedArray = getResources().obtainTypedArray(R.array.deportes_equipo_imagenes);
+        int[] imagenIds = new int[imagenesTypedArray.length()];
+        for (int i = 0; i < imagenesTypedArray.length(); i++) {
+            imagenIds[i] = imagenesTypedArray.getResourceId(i, -1);
+        }
+        imagenesTypedArray.recycle();
 
         listView.setOnItemClickListener((parent, view, position, id) -> {
-            FragmentoEjemplo fragment = (FragmentoEjemplo) getSupportFragmentManager().findFragmentById(R.id.fragmentContainer);
-            if (fragment != null) {
-                fragment.updateNews(noticias[position]);
+            FragmentoEjemplo fragmentNews = (FragmentoEjemplo) getSupportFragmentManager().findFragmentById(R.id.fragmentContainer);
+            if (fragmentNews != null) {
+                fragmentNews.updateNews(noticias[position]);
+            }
+
+            FragmentoImagen fragmentImage = (FragmentoImagen) getSupportFragmentManager().findFragmentById(R.id.fragmentContainerImage);
+            if (fragmentImage != null) {
+                fragmentImage.updateImage(imagenIds[position]);
             }
         });
     }

@@ -38,10 +38,18 @@
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/separator"
+        app:layout_constraintBottom_toTopOf="@+id/fragmentContainer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewResult" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainer"
+        android:name="com.example.aplicacion0102.FragmentoEjemplo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/separator"
+        app:layout_constraintTop_toBottomOf="@+id/miLista" />
 
     <View
         android:id="@+id/separator"
@@ -49,12 +57,12 @@
         android:layout_height="2dp"
         android:layout_marginVertical="16dp"
         android:background="@android:color/darker_gray"
-        app:layout_constraintBottom_toTopOf="@+id/fragmentContainer"
-        app:layout_constraintTop_toBottomOf="@+id/miLista" />
+        app:layout_constraintBottom_toTopOf="@+id/fragmentContainerImage"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentContainer" />
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainer"
-        android:name="com.example.aplicacion0102.FragmentoEjemplo"
+        android:id="@+id/fragmentContainerImage"
+        android:name="com.example.aplicacion0102.FragmentoImagen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

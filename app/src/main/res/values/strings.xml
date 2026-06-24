@@ -24,6 +24,7 @@
     <string name="sport_balonmano_news">Traspaso bomba: el portero más valioso de la temporada cambia de club por una cifra récord.</string>
 
     <string name="este_es_un_nuevo_fragmento_con_su_propio_ciclo_de_vida">Este es un nuevo fragmento con su propio ciclo de vida</string>
+    <string name="imagen_del_deporte">Imagen del deporte</string>
 
     <string-array name="deportes_equipo">
         <item>@string/sport_futbol</item>
@@ -48,4 +49,12 @@
         <item>@string/sport_beisbol_news</item>
         <item>@string/sport_balonmano_news</item>
     </string-array>
+
+    <array name="deportes_equipo_imagenes">
+        <item>@drawable/generated_image_futbol</item>
+        <item>@drawable/generated_image_baloncesto</item>
+        <item>@drawable/generated_image_voleibol</item>
+        <item>@drawable/generated_image_beisbol</item>
+        <item>@drawable/generated_image_balonmano</item>
+    </array>
 </resources>
