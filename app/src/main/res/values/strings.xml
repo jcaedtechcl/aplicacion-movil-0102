@@ -16,6 +16,13 @@
     <string name="sport_beisbol_desc">Deporte de batear y correr por bases.</string>
     <string name="sport_balonmano">Balonmano</string>
     <string name="sport_balonmano_desc">Deporte de meter goles con las manos.</string>
+
+    <string name="sport_futbol_news">El equipo local asegura su pase a la final tras una victoria agónica en el último minuto.</string>
+    <string name="sport_baloncesto_news">Récord de triples en la liga nacional: el escolta estrella anota 12 tiros de larga distancia.</string>
+    <string name="sport_voleibol_news">La selección nacional femenina se prepara para el torneo continental con nuevos refuerzos.</string>
+    <string name="sport_beisbol_news">Gran slam histórico en la novena entrada decide el clásico de la ciudad ante miles de fans.</string>
+    <string name="sport_balonmano_news">Traspaso bomba: el portero más valioso de la temporada cambia de club por una cifra récord.</string>
+
     <string name="este_es_un_nuevo_fragmento_con_su_propio_ciclo_de_vida">Este es un nuevo fragmento con su propio ciclo de vida</string>
 
     <string-array name="deportes_equipo">
@@ -32,5 +39,13 @@
         <item>@string/sport_voleibol_desc</item>
         <item>@string/sport_beisbol_desc</item>
         <item>@string/sport_balonmano_desc</item>
+    </string-array>
+
+    <string-array name="deportes_equipo_noticias">
+        <item>@string/sport_futbol_news</item>
+        <item>@string/sport_baloncesto_news</item>
+        <item>@string/sport_voleibol_news</item>
+        <item>@string/sport_beisbol_news</item>
+        <item>@string/sport_balonmano_news</item>
     </string-array>
 </resources>
