@@ -47,6 +47,15 @@ public class SiguientePasoActivity extends AppCompatActivity {
 
         ListAdapter adapter = new ListAdapter(this, titulos, subtitulos);
         listView.setAdapter(adapter);
+
+        String[] noticias = getResources().getStringArray(R.array.deportes_equipo_noticias);
+
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+            FragmentoEjemplo fragment = (FragmentoEjemplo) getSupportFragmentManager().findFragmentById(R.id.fragmentContainer);
+            if (fragment != null) {
+                fragment.updateNews(noticias[position]);
+            }
+        });
     }
 
     @Override
