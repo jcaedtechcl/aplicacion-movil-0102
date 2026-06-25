@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
             int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
             float batteryPct = level * 100 / (float) scale;
 
-            if (batteryPct <= 15) {
+            if (batteryPct == 15) {
                 Toast.makeText(context, "Advertencia: Batería baja (" + (int) batteryPct + "%)", Toast.LENGTH_LONG).show();
             }
         }
@@ -51,18 +51,14 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra("userInput", textToSend);
             startActivity(intent);
         });
-    }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
         IntentFilter filter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
         registerReceiver(batteryReceiver, filter);
     }
 
     @Override
-    protected void onStop() {
-        super.onStop();
+    protected void onDestroy() {
+        super.onDestroy();
         unregisterReceiver(batteryReceiver);
     }
 }

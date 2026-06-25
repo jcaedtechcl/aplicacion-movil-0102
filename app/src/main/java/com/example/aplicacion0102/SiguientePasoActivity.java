@@ -30,7 +30,7 @@ public class SiguientePasoActivity extends AppCompatActivity {
             int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
             float batteryPct = level * 100 / (float) scale;
 
-            if (batteryPct <= 15) {
+            if (batteryPct == 15) {
                 Toast.makeText(context, "Advertencia: Batería baja (" + (int) batteryPct + "%)", Toast.LENGTH_LONG).show();
             }
         }
@@ -87,14 +87,15 @@ public class SiguientePasoActivity extends AppCompatActivity {
                 fragmentImage.updateImage(imagenIds[position]);
             }
         });
+
+        IntentFilter filter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+        registerReceiver(batteryReceiver, filter);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         Log.d(TAG, "onStart");
-        IntentFilter filter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
-        registerReceiver(batteryReceiver, filter);
     }
 
     @Override
@@ -113,13 +114,13 @@ public class SiguientePasoActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         Log.d(TAG, "onStop");
-        unregisterReceiver(batteryReceiver);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         Log.d(TAG, "onDestroy");
+       unregisterReceiver(batteryReceiver);
     }
 
     @Override
