@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.content.res.TypedArray;
 import android.os.BatteryManager;
 import android.os.Bundle;
@@ -22,6 +23,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class SiguientePasoActivity extends AppCompatActivity {
 
     private static final String TAG = "SiguientePasoActivity";
+    private static final String MIS_PREFERENCIAS = "MisPreferencias";
 
     private final BroadcastReceiver batteryReceiver = new BroadcastReceiver() {
         @Override
@@ -77,15 +79,32 @@ public class SiguientePasoActivity extends AppCompatActivity {
         imagenesTypedArray.recycle();
 
         listView.setOnItemClickListener((parent, view, position, id) -> {
+            String titulo = titulos[position];
+            String subtitulo = subtitulos[position];
+            String noticia = noticias[position];
+            int imagenId = imagenIds[position];
+            String nombreImagen = getResources().getResourceEntryName(imagenId);
+
             FragmentoEjemplo fragmentNews = (FragmentoEjemplo) getSupportFragmentManager().findFragmentById(R.id.fragmentContainer);
             if (fragmentNews != null) {
-                fragmentNews.updateNews(noticias[position]);
+                fragmentNews.updateNews(noticia);
             }
 
             FragmentoImagen fragmentImage = (FragmentoImagen) getSupportFragmentManager().findFragmentById(R.id.fragmentContainerImage);
             if (fragmentImage != null) {
-                fragmentImage.updateImage(imagenIds[position]);
+                fragmentImage.updateImage(imagenId);
             }
+
+            // Guardar en SharedPreferences
+            SharedPreferences prefs = getSharedPreferences(MIS_PREFERENCIAS, Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putString("ultimo_titulo", titulo);
+            editor.putString("ultima_descripcion", subtitulo);
+            editor.putString("ultima_noticia", noticia);
+            editor.putString("ultima_imagen_nombre", nombreImagen);
+            editor.apply();
+
+            Log.d(TAG, "Última selección guardada: " + titulo);
         });
 
         IntentFilter filter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
