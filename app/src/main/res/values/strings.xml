@@ -5,6 +5,9 @@
     <string name="siguiente_paso">Siguiente Actividad</string>
     <string name="hola">¡Hola!</string>
     <string name="regresar">Regresar</string>
+    <string name="content_providers">Content Providers</string>
+    <string name="configuraciones_del_sistema">Configuraciones del sistema</string>
+    <string name="actualizar">Actualizar</string>
 
     <string name="sport_futbol">Fútbol</string>
     <string name="sport_futbol_desc">Deporte rey con dos equipos de 11 jugadores.</string>

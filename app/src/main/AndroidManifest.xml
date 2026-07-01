@@ -24,6 +24,9 @@
         <activity
             android:name=".SiguientePasoActivity"
             android:exported="false" />
+        <activity
+            android:name=".ContentProviderActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

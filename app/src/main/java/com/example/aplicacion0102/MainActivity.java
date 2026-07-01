@@ -44,11 +44,17 @@ public class MainActivity extends AppCompatActivity {
 
         EditText editTextName = findViewById(R.id.editTextName);
         Button btnNext = findViewById(R.id.btnNext);
+        Button btnContentProviders = findViewById(R.id.btnContentProviders);
 
         btnNext.setOnClickListener(v -> {
             String textToSend = editTextName.getText().toString();
             Intent intent = new Intent(MainActivity.this, SiguientePasoActivity.class);
             intent.putExtra("userInput", textToSend);
+            startActivity(intent);
+        });
+
+        btnContentProviders.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, ContentProviderActivity.class);
             startActivity(intent);
         });
 
