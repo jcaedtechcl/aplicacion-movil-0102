@@ -8,6 +8,11 @@
     <string name="content_providers">Content Providers</string>
     <string name="configuraciones_del_sistema">Configuraciones del sistema</string>
     <string name="actualizar">Actualizar</string>
+    <string name="shared_preferences_btn">Shared Preferences</string>
+    <string name="tu_ultima_seleccion">Tu última selección de equipo</string>
+    <string name="sin_preferencias">Sin preferencias seleccionadas aún</string>
+    <string name="borrar_preferencias">Borrar Preferencias</string>
+    <string name="preferencias_eliminadas">Preferencias eliminadas</string>
 
     <string name="sport_futbol">Fútbol</string>
     <string name="sport_futbol_desc">Deporte rey con dos equipos de 11 jugadores.</string>

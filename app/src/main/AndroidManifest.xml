@@ -27,6 +27,9 @@
         <activity
             android:name=".ContentProviderActivity"
             android:exported="false" />
+        <activity
+            android:name=".ViewSharedPreferenceActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
