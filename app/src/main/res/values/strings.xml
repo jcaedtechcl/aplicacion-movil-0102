@@ -15,6 +15,13 @@
     <string name="preferencias_eliminadas">Preferencias eliminadas</string>
     <string name="sqlite_btn">Uso de SQLite</string>
     <string name="titulo_sqlite">Gestión de SQLite</string>
+    <string name="user_management_btn">Gestión de Usuarios</string>
+    <string name="register_user">Registrar Usuario</string>
+    <string name="list_users">Listar Usuarios</string>
+    <string name="name_hint">Nombre</string>
+    <string name="email_hint">Email</string>
+    <string name="save">Guardar</string>
+    <string name="user_registered">Usuario registrado</string>
 
     <string name="sport_futbol">Fútbol</string>
     <string name="sport_futbol_desc">Deporte rey con dos equipos de 11 jugadores.</string>
