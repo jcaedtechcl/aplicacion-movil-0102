@@ -30,6 +30,9 @@
         <activity
             android:name=".ViewSharedPreferenceActivity"
             android:exported="false" />
+        <activity
+            android:name=".SQLiteActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -13,6 +13,8 @@
     <string name="sin_preferencias">Sin preferencias seleccionadas aún</string>
     <string name="borrar_preferencias">Borrar Preferencias</string>
     <string name="preferencias_eliminadas">Preferencias eliminadas</string>
+    <string name="sqlite_btn">Uso de SQLite</string>
+    <string name="titulo_sqlite">Gestión de SQLite</string>
 
     <string name="sport_futbol">Fútbol</string>
     <string name="sport_futbol_desc">Deporte rey con dos equipos de 11 jugadores.</string>

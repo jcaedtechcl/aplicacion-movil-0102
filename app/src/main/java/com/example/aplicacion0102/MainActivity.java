@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnNext = findViewById(R.id.btnNext);
         Button btnContentProviders = findViewById(R.id.btnContentProviders);
         Button btnSharedPrefs = findViewById(R.id.btnSharedPrefs);
+        Button btnSQLite = findViewById(R.id.btnSQLite);
 
         btnNext.setOnClickListener(v -> {
             String textToSend = editTextName.getText().toString();
@@ -61,6 +62,11 @@ public class MainActivity extends AppCompatActivity {
 
         btnSharedPrefs.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, ViewSharedPreferenceActivity.class);
+            startActivity(intent);
+        });
+
+        btnSQLite.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, SQLiteActivity.class);
             startActivity(intent);
         });
 
