@@ -22,6 +22,7 @@
     <string name="email_hint">Email</string>
     <string name="save">Guardar</string>
     <string name="user_registered">Usuario registrado</string>
+    <string name="retrofit_btn">Consumo API Retrofit</string>
 
     <string name="sport_futbol">Fútbol</string>
     <string name="sport_futbol_desc">Deporte rey con dos equipos de 11 jugadores.</string>
