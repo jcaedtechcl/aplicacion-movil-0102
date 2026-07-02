@@ -1,11 +1,13 @@
 package com.example.aplicacion0102;
 
 import android.content.BroadcastReceiver;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.res.TypedArray;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.BatteryManager;
 import android.os.Bundle;
 import android.util.Log;
@@ -105,6 +107,9 @@ public class SiguientePasoActivity extends AppCompatActivity {
             editor.apply();
 
             Log.d(TAG, "Última selección guardada: " + titulo);
+
+            // Guardar en SQLite
+            guardarEnSQLite(titulo, subtitulo, noticia, nombreImagen);
         });
 
         IntentFilter filter = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
@@ -146,5 +151,25 @@ public class SiguientePasoActivity extends AppCompatActivity {
     public void onRestart() {
         super.onRestart();
         Log.d(TAG, "onRestart");
+    }
+
+    private void guardarEnSQLite(String titulo, String descripcion, String resumen, String imagen) {
+        DatabaseHelper dbHelper = new DatabaseHelper(this);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(DatabaseHelper.COLUMN_TITULO, titulo);
+        values.put(DatabaseHelper.COLUMN_DESCRIPCION, descripcion);
+        values.put(DatabaseHelper.COLUMN_RESUMEN, resumen);
+        values.put(DatabaseHelper.COLUMN_IMAGEN, imagen);
+
+        long newRowId = db.insert(DatabaseHelper.TABLE_NAME, null, values);
+
+        if (newRowId != -1) {
+            Log.d(TAG, "Registro guardado en SQLite con ID: " + newRowId);
+        } else {
+            Log.e(TAG, "Error al guardar en SQLite");
+        }
+        db.close();
     }
 }
