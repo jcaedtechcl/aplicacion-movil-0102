@@ -23,6 +23,9 @@
     <string name="save">Guardar</string>
     <string name="user_registered">Usuario registrado</string>
     <string name="retrofit_btn">Consumo API Retrofit</string>
+    <string name="guardar_firebase">Guardar datos en Firebase</string>
+    <string name="obtener_dispositivos">Obtener Dispositivos</string>
+    <string name="resultados_aqui">Los resultados aparecerán aquí...</string>
 
     <string name="sport_futbol">Fútbol</string>
     <string name="sport_futbol_desc">Deporte rey con dos equipos de 11 jugadores.</string>

@@ -22,6 +22,7 @@ public class RetrofitActivity extends AppCompatActivity {
 
     private static final String TAG = "RetrofitActivity";
     private TextView textViewResult;
+    private Button btnSaveFirebase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +37,13 @@ public class RetrofitActivity extends AppCompatActivity {
 
         textViewResult = findViewById(R.id.textViewRetrofitResult);
         Button btnFetch = findViewById(R.id.btnFetchData);
+        btnSaveFirebase = findViewById(R.id.btnSaveFirebase);
 
         btnFetch.setOnClickListener(v -> fetchDevices());
+
+        btnSaveFirebase.setOnClickListener(v -> {
+            Toast.makeText(this, "Funcionalidad de Firebase próximamente", Toast.LENGTH_SHORT).show();
+        });
     }
 
     private void fetchDevices() {
@@ -54,6 +60,7 @@ public class RetrofitActivity extends AppCompatActivity {
                         sb.append(device.toString()).append("\n\n");
                     }
                     textViewResult.setText(sb.toString());
+                    btnSaveFirebase.setEnabled(true);
                 } else {
                     Toast.makeText(RetrofitActivity.this, "Error en la respuesta", Toast.LENGTH_SHORT).show();
                 }
