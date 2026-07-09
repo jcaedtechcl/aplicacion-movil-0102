@@ -12,6 +12,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.WriteBatch;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -23,6 +27,7 @@ public class RetrofitActivity extends AppCompatActivity {
     private static final String TAG = "RetrofitActivity";
     private TextView textViewResult;
     private Button btnSaveFirebase;
+    private List<Device> deviceList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +46,31 @@ public class RetrofitActivity extends AppCompatActivity {
 
         btnFetch.setOnClickListener(v -> fetchDevices());
 
-        btnSaveFirebase.setOnClickListener(v -> {
-            Toast.makeText(this, "Funcionalidad de Firebase próximamente", Toast.LENGTH_SHORT).show();
+        btnSaveFirebase.setOnClickListener(v -> saveToFirebase());
+    }
+
+    private void saveToFirebase() {
+        if (deviceList.isEmpty()) return;
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        WriteBatch batch = db.batch();
+
+        for (Device device : deviceList) {
+            // Si el dispositivo tiene ID de la API, lo usamos como ID de documento,
+            // si no, dejamos que Firestore genere uno.
+            if (device.getId() != null && !device.getId().isEmpty()) {
+                batch.set(db.collection("devices").document(device.getId()), device);
+            } else {
+                batch.set(db.collection("devices").document(), device);
+            }
+        }
+
+        batch.commit().addOnSuccessListener(aVoid -> {
+            Toast.makeText(this, "Datos guardados en Firestore correctamente", Toast.LENGTH_LONG).show();
+            btnSaveFirebase.setEnabled(false);
+        }).addOnFailureListener(e -> {
+            Log.e(TAG, "Error al guardar en Firestore", e);
+            Toast.makeText(this, "Error al guardar en Firestore", Toast.LENGTH_SHORT).show();
         });
     }
 
@@ -54,9 +82,9 @@ public class RetrofitActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<Device>> call, Response<List<Device>> response) {
                 if (response.isSuccessful() && response.body() != null) {
-                    List<Device> devices = response.body();
+                    deviceList = response.body();
                     StringBuilder sb = new StringBuilder();
-                    for (Device device : devices) {
+                    for (Device device : deviceList) {
                         sb.append(device.toString()).append("\n\n");
                     }
                     textViewResult.setText(sb.toString());
