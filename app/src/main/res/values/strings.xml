@@ -34,6 +34,13 @@
     <string name="error_firebase">Error en la operación de Firebase</string>
     <string name="obtener_dispositivos">Obtener Dispositivos</string>
     <string name="resultados_aqui">Los resultados aparecerán aquí...</string>
+    <string name="login_title">Inicio de Sesión</string>
+    <string name="login_btn">Ingresar</string>
+    <string name="register_btn">Registrarse</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="auth_failed">Autenticación fallida.</string>
+    <string name="welcome">Bienvenido</string>
+    <string name="logout">Cerrar Sesión</string>
 
     <string name="sport_futbol">Fútbol</string>
     <string name="sport_futbol_desc">Deporte rey con dos equipos de 11 jugadores.</string>
