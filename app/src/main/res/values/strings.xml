@@ -24,6 +24,14 @@
     <string name="user_registered">Usuario registrado</string>
     <string name="retrofit_btn">Consumo API Retrofit</string>
     <string name="guardar_firebase">Guardar datos en Firebase</string>
+    <string name="gestionar_firebase_btn">Gestionar Firebase (CRUD)</string>
+    <string name="titulo_firebase_crud">CRUD de Dispositivos Firebase</string>
+    <string name="nombre_dispositivo">Nombre del dispositivo</string>
+    <string name="actualizar_btn">Actualizar</string>
+    <string name="eliminar_btn">Eliminar</string>
+    <string name="dispositivo_eliminado">Dispositivo eliminado</string>
+    <string name="dispositivo_actualizado">Dispositivo actualizado</string>
+    <string name="error_firebase">Error en la operación de Firebase</string>
     <string name="obtener_dispositivos">Obtener Dispositivos</string>
     <string name="resultados_aqui">Los resultados aparecerán aquí...</string>
 

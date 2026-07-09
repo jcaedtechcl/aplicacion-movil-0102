@@ -47,6 +47,12 @@ public class RetrofitActivity extends AppCompatActivity {
         btnFetch.setOnClickListener(v -> fetchDevices());
 
         btnSaveFirebase.setOnClickListener(v -> saveToFirebase());
+
+        Button btnCRUD = findViewById(R.id.btnGoToFirebaseCRUD);
+        btnCRUD.setOnClickListener(v -> {
+            android.content.Intent intent = new android.content.Intent(RetrofitActivity.this, FirebaseCRUDActivity.class);
+            startActivity(intent);
+        });
     }
 
     private void saveToFirebase() {

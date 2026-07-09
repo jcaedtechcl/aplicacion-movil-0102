@@ -41,6 +41,9 @@
         <activity
             android:name=".RetrofitActivity"
             android:exported="false" />
+        <activity
+            android:name=".FirebaseCRUDActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
